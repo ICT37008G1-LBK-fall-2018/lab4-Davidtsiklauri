@@ -1,26 +1,16 @@
 
-function differntNames(studentList, Name) {
-
-    let count = 0;
-
-    for (let i = 0; i < studentList.length; i++) {
-        if (studentList[i].Name == Name) {
-            count++;
-
-
+ 
+const students =  [ { id: 1, Name:'Giorgi' },
+                    { id: 2, Name:'Giorgi' },
+                    { id: 3, Name:'Saba' },
+                    { id: 4, Name:'Tornike' },
+                    { id: 5, Name:'Saba' },
+                    { id: 6, Name:'Giorgi' }];
 
 
-        }
-    }
-    return count;
-}
+const studentsCounter = students.reduce( ( acc, curr ) => {
+        curr.Name in acc ? acc[curr.Name]++ : acc[curr.Name] = 1;        
+        return acc;  
+}, {} )
 
-var newObject =
-    [{ id: 1, Name:'Giorgi' },
-    { id: 2, Name:'Giorgi' },
-    { id: 3, Name:'Saba' },
-    { id: 4, Name:'Tornike' },
-    { id: 5, Name:'Saba' },
-    { id: 6, Name:'Giorgi' }];
-
-alert(differntNames(newObject, 'Giorgi'));
+console.log(studentsCounter);

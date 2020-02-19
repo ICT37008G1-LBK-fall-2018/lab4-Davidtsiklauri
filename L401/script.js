@@ -1,21 +1,7 @@
-function LowerNumber(a,b,c){
-if(a<b){
-return a;
 
+function getLowestNumber( ...numbers ){
+     return Math.min(...numbers);
+};
 
-}
-
-else if(b>c) {
-return c;
-
-}
-else{
-    return b;
-}
-
-
-
-
-}
-let lower = LowerNumber(3,2,1);
+let lower = getLowestNumber(3,2,5);
 console.log(lower);
